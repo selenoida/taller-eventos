@@ -1,21 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
     
     let boton = document.getElementById("botonSaludar");
+    let soyEldiv = document.getElementById("elDiv");
 
-    function saludar() {
-    alert("Hola!");
+
+    function saludar(event) {
+        alert("Hola!");
+        event.stopPropagation();
+    }
+
+    function saludaEldiv() {
+        alert("Hola! Soy el div");
     }
 
     boton.addEventListener("click", saludar); 
-})
-
-document.addEventListener("DOMContentLoaded", function() {
-
-let soyEldiv = document.getElementById("elDiv");
-
-function saludaEldiv() {
-    alert("Hola! Soy el div");
-}
-
-soyEldiv.addEventListener("click", saludaEldiv);
+    soyEldiv.addEventListener("click", saludaEldiv);
 }) 
